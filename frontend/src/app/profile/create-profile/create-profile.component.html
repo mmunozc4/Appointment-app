@@ -1,0 +1,8 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="space-y-4">
+  <textarea formControlName="bio" placeholder="Descripción" class="input"></textarea>
+  <input formControlName="services" placeholder="Servicios ofrecidos" class="input" />
+  <input formControlName="priceRange" placeholder="Rango de precios" class="input" />
+  <input formControlName="city" placeholder="Ciudad" class="input" />
+
+  <button type="submit" class="btn">Guardar perfil</button>
+</form>

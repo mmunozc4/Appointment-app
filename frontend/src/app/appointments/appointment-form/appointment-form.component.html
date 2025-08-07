@@ -1,0 +1,48 @@
+<div class="appointment-form-container">
+  <div class="card-content">
+    <h2 class="form-title">
+      {{ isEdit ? 'Editar Cita' : 'Nueva Cita' }}
+    </h2>
+
+    <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+
+      <!-- Nombre del cliente -->
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Nombre del Cliente</mat-label>
+        <input matInput formControlName="clientName" autocomplete="off" />
+      </mat-form-field>
+
+      <!-- Fecha -->
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <!-- Hora -->
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Hora</mat-label>
+        <input matInput type="time" formControlName="time" autocomplete="off" />
+      </mat-form-field>
+
+      <!-- Servicio -->
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Servicio</mat-label>
+        <input matInput formControlName="service" autocomplete="off" />
+      </mat-form-field>
+
+      <!-- Notas -->
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>Notas</mat-label>
+        <textarea matInput formControlName="notes" rows="4"></textarea>
+      </mat-form-field>
+
+      <!-- Botón de envío -->
+      <button mat-raised-button color="primary" class="submit-button" type="submit" [disabled]="appointmentForm.invalid">
+        {{ isEdit ? 'Actualizar' : 'Registrar' }}
+      </button>
+
+    </form>
+  </div>
+</div>

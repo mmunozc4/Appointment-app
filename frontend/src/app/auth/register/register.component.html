@@ -1,0 +1,31 @@
+<div class="register-form-container">
+  <h2 class="form-title">Crear Cuenta</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Contraseña</mat-label>
+      <input matInput formControlName="password" type="password">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Selecciona un rol</mat-label>
+      <mat-select formControlName="role">
+        <mat-option value="CLIENT">Cliente</mat-option>
+        <mat-option value="PROFESSIONAL">Profesional</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" class="submit-button">Registrarse</button>
+
+  </form>
+</div>
